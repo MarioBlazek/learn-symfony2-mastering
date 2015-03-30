@@ -7,8 +7,8 @@
     bootstrap="../vendor/autoload.php">
 
     <testsuites>
-        <testsuite name="Test Suite">
-            <directory>../src/*/*/Tests</directory>
+        <testsuite name="Functional Test suite">
+            <directory>../src/MB/ApplicationBundle/Tests</directory>
         </testsuite>
     </testsuites>
 </phpunit>
