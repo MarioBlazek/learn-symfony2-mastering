@@ -2,7 +2,7 @@
 
 namespace MB\ApplicationBundle\Tests\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Tests\Functional\WebTestCase;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 class QuoteControllerTest extends WebTestCase
@@ -21,5 +21,17 @@ class QuoteControllerTest extends WebTestCase
     {
         $response = $this->post('/api/quotes', array('content' => '<KnightOfNi> Ni!'));
         $this->assertSame(Response::HTTP_CREATED, $response->getStatusCode());
+    }
+
+    public function testSubmitEmptyQuote()
+    {
+        $response = $this->post('/api/quotes', array('content' => ''));
+        $this->assertSame(Response::HTTP_UNPROCESSABLE_ENTITY, $response->getStatusCode());
+    }
+
+    public function testSubmitNoQuote()
+    {
+        $response = $this->post('/api/quotes', array());
+        $this->assertSame(Response::HTTP_UNPROCESSABLE_ENTITY, $response->getStatusCode());
     }
 }
