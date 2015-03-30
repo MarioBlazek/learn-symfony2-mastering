@@ -1,0 +1,17 @@
+{
+    "name": "nostradamus/fortune",
+    "license": "MIT",
+    "type": "project",
+    "description": "A collection of qoutes",
+    "autoload": {
+        "psr-4": { "": "src/" }
+    },
+    "require": {
+        "php": ">=5.3.17",
+
+        "symfony/symfony": "~2.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.1"
+    }
+}
