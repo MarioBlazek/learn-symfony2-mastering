@@ -19,8 +19,17 @@ class QuoteController extends Controller
 
             return new JsonResponse($answer, Response::HTTP_UNPROCESSABLE_ENTITY);
         }
-        $answer['quote']['content'] = $postedValues['content'];
+        $quoteRepository = $this->container->get('mb_application.quote_repository');
+        $quote = $quoteRepository->insert($postedValues['content']);
 
-        return new JsonResponse($answer, Response::HTTP_CREATED);
+        return new JsonResponse($quote, Response::HTTP_CREATED);
+    }
+
+    public function listAction()
+    {
+        $quoteRepository = $this->get('mb_application.quote_repository');
+        $quotes = $quoteRepository->findAll();
+
+        return new JsonResponse($quotes, Response::HTTP_OK);
     }
 }
