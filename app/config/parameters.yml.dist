@@ -1,2 +1,6 @@
 parameters:
-    secret: ChangeMePlease
+    secret: nmXZVfuY4fXpHdkEEWkWC4vP
+
+    database_name: fortune
+    database_user: root
+    database_password: root

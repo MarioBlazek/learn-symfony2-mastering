@@ -1,0 +1,15 @@
+MB\ApplicationBundle\Entity\Quote:
+    type: entity
+    repositoryClass: MB\ApplicationBundle\Entity\QuoteGateway
+    table: quote
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        content:
+            type: text
+        createdAt:
+            type: datetime
+            column: created_at

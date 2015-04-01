@@ -9,8 +9,8 @@
         </service>
 
         <service id="mb_application.quote_gateway"
-                 class="MB\ApplicationBundle\Entity\QuoteGateway">
-            <argument>/tmp/fortune_database.txt</argument>
+                 class="MB\ApplicationBundle\Entity\QuoteGateway" factory-service="doctrine" factory-method="getRepository">
+            <argument>MBApplicationBundle:Quote</argument>
         </service>
 
         <service id="mb_application.quote_repository"
