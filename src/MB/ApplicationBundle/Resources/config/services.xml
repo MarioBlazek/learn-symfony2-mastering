@@ -18,5 +18,9 @@
             <argument type="service" id="mb_application.quote_gateway" />
             <argument type="service" id="mb_application.quote_factory" />
         </service>
+
+        <service id="mb_application.submit_json_listener" class="MB\ApplicationBundle\EventListener\SubmitJsonListener">
+            <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" />
+        </service>
     </services>
 </container>
